@@ -1,5 +1,4 @@
 package com.custom.emptylayout;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
@@ -28,6 +27,7 @@ public class FrameEmptyLayout extends FrameLayout{
     //private View normalView;
     private List<View> contentViews = new ArrayList<>();
 
+    private boolean showLoading;
     private int errorImgId;
     private String errorMessage;
     private String errorBtnMessage;
@@ -46,9 +46,14 @@ public class FrameEmptyLayout extends FrameLayout{
     public FrameEmptyLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.EmptyLayout);
-        String attrTitleText = arr.getString(R.styleable.EmptyLayout_empty_title_text);
-        String attrDetailText = arr.getString(R.styleable.EmptyLayout_empty_detail_text);
-        String attrBtnText = arr.getString(R.styleable.EmptyLayout_empty_btn_text);
+        showLoading = arr.getBoolean(R.styleable.EmptyLayout_show_loading,false);
+        //Error state attrs
+        errorImgId = arr.getResourceId(R.styleable.EmptyLayout_error_image, -1);
+        errorMessage = arr.getString(R.styleable.EmptyLayout_error_text);
+        errorBtnMessage = arr.getString(R.styleable.EmptyLayout_error_retry_text);
+        //Empty state attrs
+        emptyImgId = arr.getResourceId(R.styleable.EmptyLayout_empty_image,-1);
+        emptyMessage = arr.getString(R.styleable.EmptyLayout_empty_text);
         arr.recycle();
     }
 

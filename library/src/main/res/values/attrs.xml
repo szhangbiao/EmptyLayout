@@ -2,10 +2,13 @@
 <resources>
     <!-- EmptyLayout start -->
     <declare-styleable name="EmptyLayout">
-        <attr name="empty_show_loading" format="boolean"/>
-        <attr name="empty_title_text" format="string"/>
-        <attr name="empty_detail_text" format="string"/>
-        <attr name="empty_btn_text" format="string"/>
+        <attr name="show_loading" format="boolean"/>
+        <attr name="error_image" format="reference"/>
+        <attr name="error_text" format="string"/>
+        <attr name="error_retry_text" format="string"/>
+        
+        <attr name="empty_image" format="reference"/>
+        <attr name="empty_text" format="string"/>
     </declare-styleable>
     <!-- EmptyLayout end -->
     
