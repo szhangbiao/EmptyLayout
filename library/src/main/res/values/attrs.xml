@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- EmptyLayout start -->
+    <declare-styleable name="EmptyLayout">
+        <attr name="empty_show_loading" format="boolean"/>
+        <attr name="empty_title_text" format="string"/>
+        <attr name="empty_detail_text" format="string"/>
+        <attr name="empty_btn_text" format="string"/>
+    </declare-styleable>
+    <!-- EmptyLayout end -->
+    
+    <!--************ QMUILoading ***********-->
+    <declare-styleable name="LoadingView">
+        <attr name="loading_view_size" format="dimension"/>
+        <attr name="android:color"/>
+    </declare-styleable>
+    <attr name="LoadingStyle" format="reference"/>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--********************* Loading *********************-->
+    <style name="Loading">
+        <item name="loading_view_size">20dp</item>
+        <item name="android:color">#858C96</item>
+    </style>
+</resources>
