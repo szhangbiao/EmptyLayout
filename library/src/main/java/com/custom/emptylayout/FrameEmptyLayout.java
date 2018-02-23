@@ -59,7 +59,7 @@ public class FrameEmptyLayout extends FrameLayout{
     private int emptyImgId;
     private String emptyMessage;
 
-    private RetryClickListener retryListener;
+    private OnRetryClickListener retryListener;
 
     public FrameEmptyLayout(Context context) {
         this(context,null);
@@ -74,7 +74,6 @@ public class FrameEmptyLayout extends FrameLayout{
         inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.EmptyLayout);
-        boolean showLoading = arr.getBoolean(R.styleable.EmptyLayout_show_loading, false);
         //Error state attrs
         errorImgId = arr.getResourceId(R.styleable.EmptyLayout_error_image, -1);
         errorMessage = arr.getString(R.styleable.EmptyLayout_error_text);
@@ -83,9 +82,6 @@ public class FrameEmptyLayout extends FrameLayout{
         emptyImgId = arr.getResourceId(R.styleable.EmptyLayout_empty_image,-1);
         emptyMessage = arr.getString(R.styleable.EmptyLayout_empty_text);
         arr.recycle();
-        if(showLoading){
-            showLoading();
-        }
     }
 
     @Override
@@ -95,18 +91,24 @@ public class FrameEmptyLayout extends FrameLayout{
             contentViews.add(child);
         }
     }
+    /**
+     * Hide all other states and show loading
+     */
+    public void showLoading() {
+        switchState(STATUS_LOADING, 0, null, null, null);
+    }
+    /**
+     * Hide all other states and show loading
+     */
+    public void showLoading(List<Integer> skipIds) {
+        switchState(STATUS_LOADING, 0, null, null, skipIds);
+    }
 
     /**
      * Hide all other states and show content
      */
     public void showContent() {
         switchState(STATUS_NORMAL, 0, null, null, null);
-    }
-    /**
-     * Hide all other states and show loading
-     */
-    public void showLoading() {
-        switchState(STATUS_LOADING, 0, null, null, null);
     }
 
     /**
@@ -126,8 +128,14 @@ public class FrameEmptyLayout extends FrameLayout{
     /**
      * Show empty view when there are not data to show
      */
-    public void showEmpty(@DrawableRes int emptyResId, String emptyTextTitle, String emptyContent) {
-        switchState(STATUS_EMPTY, emptyResId, emptyTextTitle, emptyContent, null);
+    public void showEmpty(@DrawableRes int emptyResId, String emptyTextTitle) {
+        switchState(STATUS_EMPTY, emptyResId, emptyTextTitle, null, null);
+    }
+    /**
+     * Show empty view when there are not data to show
+     */
+    public void showEmpty(@DrawableRes int emptyResId, String emptyTextTitle,List<Integer> skipIds) {
+        switchState(STATUS_EMPTY, emptyResId, emptyTextTitle, null, skipIds);
     }
     /**
      * Show error view with a button when something goes wrong and prompting the user to try again
@@ -139,8 +147,14 @@ public class FrameEmptyLayout extends FrameLayout{
     /**
      * Show error view with a button when something goes wrong and prompting the user to try again
      */
-    public void showError(int emptyResId, String errorTextTitle, String errorContent) {
-        switchState(STATUS_ERROR, emptyResId, errorTextTitle, errorContent, null);
+    public void showError(int emptyResId, String errorTitle, String retryText) {
+        switchState(STATUS_ERROR, emptyResId, errorTitle, retryText, null);
+    }
+    /**
+     * Show error view with a button when something goes wrong and prompting the user to try again
+     */
+    public void showError(int emptyResId, String errorTitle, String retryText,List<Integer> skipIds) {
+        switchState(STATUS_ERROR, emptyResId, errorTitle, retryText, skipIds);
     }
 
     /**
@@ -216,11 +230,13 @@ public class FrameEmptyLayout extends FrameLayout{
     private void setLoadingView() {
         if(loadingView == null){
             loadingView = (LoadingView) inflater.inflate(R.layout.layout_loading, this,false);
+            loadingView.setTag(TAG_LOADING);
+
             layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             layoutParams.gravity = Gravity.CENTER;
-            addView(emptyView, layoutParams);
+            addView(loadingView, layoutParams);
         }else{
-            emptyView.setVisibility(VISIBLE);
+            loadingView.setVisibility(VISIBLE);
         }
     }
     /**
@@ -242,9 +258,9 @@ public class FrameEmptyLayout extends FrameLayout{
         } else {
             emptyView.setVisibility(VISIBLE);
         }
-        if (resImgId != 0 && emptyImageView != null) {
+        if (resImgId >0&& emptyImageView != null) {
             emptyImageView.setImageResource(resImgId);
-        } else if (emptyImgId != 0 && emptyImageView != null) {
+        } else if (emptyImgId >0 && emptyImageView != null) {
             emptyImageView.setImageResource(emptyImgId);
         }
 
@@ -278,9 +294,9 @@ public class FrameEmptyLayout extends FrameLayout{
             errorView.setVisibility(VISIBLE);
         }
 
-        if (resImgId != 0 && errorImageView != null) {
+        if (resImgId >0 && errorImageView != null) {
             errorImageView.setImageResource(resImgId);
-        } else if (errorImgId != 0 && errorImageView != null) {
+        } else if (errorImgId >0 && errorImageView != null) {
             errorImageView.setImageResource(errorImgId);
         }
 
@@ -356,11 +372,11 @@ public class FrameEmptyLayout extends FrameLayout{
         }
     }
 
-    public void setRetryListener(RetryClickListener retryListener) {
+    public void setRetryListener(OnRetryClickListener retryListener) {
         this.retryListener = retryListener;
     }
 
-    public interface RetryClickListener{
+    public interface OnRetryClickListener {
         void onClick();
     }
 }

@@ -2,7 +2,6 @@
 <resources>
     <!-- EmptyLayout start -->
     <declare-styleable name="EmptyLayout">
-        <attr name="show_loading" format="boolean"/>
         <attr name="error_image" format="reference"/>
         <attr name="error_text" format="string"/>
         <attr name="error_retry_text" format="string"/>

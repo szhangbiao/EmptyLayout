@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EmptyLayout</string>
+    <string name="text_loading">正在加载</string>
+    <string name="text_normal">正常显示view</string>
+    <string name="text_empty">空数据页面</string>
+    <string name="text_error">加载出错页面</string>
 </resources>

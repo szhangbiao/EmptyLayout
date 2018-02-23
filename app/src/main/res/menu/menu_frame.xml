@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_loading" android:title="@string/text_loading"/>
+    <item android:id="@+id/menu_normal" android:title="@string/text_normal"/>
+    <item android:id="@+id/menu_empty" android:title="@string/text_empty"/>
+    <item android:id="@+id/menu_error" android:title="@string/text_error"/>
+</menu>

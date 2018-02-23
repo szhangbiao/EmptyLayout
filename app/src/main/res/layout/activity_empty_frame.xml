@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.custom.emptylayout.FrameEmptyLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fel_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_30dp"
+        android:background="@color/color_bbbbbb"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dimen_20dp"
+        android:text="这是头部"
+        android:textColor="@color/color_333333"
+        />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:gravity="center"
+        android:text="@string/text_normal"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        />
+
+</com.custom.emptylayout.FrameEmptyLayout>
