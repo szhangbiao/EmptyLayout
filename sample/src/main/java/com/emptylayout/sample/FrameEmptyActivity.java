@@ -1,9 +1,10 @@
-package com.custom.emptylayout;
+package com.emptylayout.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.custom.emptylayout.FrameEmptyLayout;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,9 +40,9 @@ public class FrameEmptyActivity extends AppCompatActivity {
         /**
          * 菜单项被点击时调用，也就是菜单项的监听方法。
          * 通过这几个方法，可以得知，对于Activity，同一时间只能显示和监听一个Menu 对象。
-         * method stub
+         * method stub 得到被点击的item的itemId
          */
-        switch(item.getItemId()) //得到被点击的item的itemId
+        switch(item.getItemId())
         {
             case  R.id.menu_loading:
                 emptyLayout.showLoading();
@@ -50,13 +51,16 @@ public class FrameEmptyActivity extends AppCompatActivity {
                 emptyLayout.showContent();
                 break;
             case  R.id.menu_empty:
-                emptyLayout.showEmpty(R.drawable.ic_launcher_foreground,"暂无数据！");
+                emptyLayout.showEmpty(R.drawable.ic_launcher_foreground,"暂无数据！",skipId);
                 break;
             case  R.id.menu_error:
                 emptyLayout.showError(R.drawable.net_error,"不知道什么原因加载出错了！","点击重试");
                 break;
             case  R.id.menu_net_error:
                 emptyLayout.showError(R.drawable.net_error,"不知道什么原因加载出错了！",null);
+                break;
+            default:
+                emptyLayout.showContent();
                 break;
         }
         return true;

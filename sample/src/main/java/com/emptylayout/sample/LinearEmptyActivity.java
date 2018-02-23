@@ -1,4 +1,4 @@
-package com.custom.emptylayout;
+package com.emptylayout.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import com.custom.emptylayout.LinearEmptyLayout;
 
 /**
  * Created by szhangbiao on 2018/2/23.
@@ -18,7 +19,6 @@ public class LinearEmptyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_empty_linear);
         emptyLayout=findViewById(R.id.lel_empty);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_linear, menu);
@@ -30,9 +30,9 @@ public class LinearEmptyActivity extends AppCompatActivity {
         /**
          * 菜单项被点击时调用，也就是菜单项的监听方法。
          * 通过这几个方法，可以得知，对于Activity，同一时间只能显示和监听一个Menu 对象。
-         * method stub
+         * method stub 得到被点击的item的itemId
          */
-        switch(item.getItemId()) //得到被点击的item的itemId
+        switch(item.getItemId())
         {
             case  R.id.menu_loading:
                 emptyLayout.show(true);
@@ -61,6 +61,9 @@ public class LinearEmptyActivity extends AppCompatActivity {
                         Toast.makeText(LinearEmptyActivity.this,getResources().getString(R.string.emptyView_retry),Toast.LENGTH_SHORT).show();
                     }
                 });
+                break;
+            default:
+                emptyLayout.showContent();
                 break;
         }
         return true;

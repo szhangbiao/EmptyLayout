@@ -26,7 +26,6 @@ public class LinearEmptyLayout extends LinearLayout{
     private TextView mDetailTextView;
     protected Button mButton;
 
-    //private View normalView;
     private List<View> contentViews = new ArrayList<>();
 
     public LinearEmptyLayout (Context context) {
@@ -48,7 +47,6 @@ public class LinearEmptyLayout extends LinearLayout{
         arr.recycle();
         setOrientation(VERTICAL);
         setGravity(Gravity.CENTER);
-
         show(attrShowLoading, attrTitleText, attrDetailText, attrBtnText, null);
     }
 
