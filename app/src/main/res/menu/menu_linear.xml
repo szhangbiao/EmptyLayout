@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_normal" android:title="@string/text_normal"/>
+    <item android:id="@+id/menu_loading" android:title="@string/emptyView_loading"/>
+    <item android:id="@+id/menu_single_text" android:title="@string/emptyView_single_text"/>
+    <item android:id="@+id/menu_double_text" android:title="@string/emptyView_double_text"/>
+    <item android:id="@+id/menu_single_text_and_button" android:title="@string/emptyView_single_text_and_button"/>
+    <item android:id="@+id/menu_double_text_and_button" android:title="@string/emptyView_double_text_and_button"/>
+</menu>

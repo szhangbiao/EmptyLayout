@@ -21,7 +21,6 @@ import java.util.List;
  * Created by szhangbiao on 2018/2/22.
  */
 
-
 public class FrameEmptyLayout extends FrameLayout{
     private static final String TAG_LOADING = "EmptyOrNetErrorLayout.TAG_LOADING";
     private static final String TAG_EMPTY = "EmptyOrNetErrorLayout.TAG_EMPTY";
@@ -73,14 +72,14 @@ public class FrameEmptyLayout extends FrameLayout{
         super(context, attrs, defStyle);
         inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.EmptyLayout);
+        TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.FrameEmptyLayout);
         //Error state attrs
-        errorImgId = arr.getResourceId(R.styleable.EmptyLayout_error_image, -1);
-        errorMessage = arr.getString(R.styleable.EmptyLayout_error_text);
-        errorBtnMessage = arr.getString(R.styleable.EmptyLayout_error_retry_text);
+        errorImgId = arr.getResourceId(R.styleable.FrameEmptyLayout_error_image, -1);
+        errorMessage = arr.getString(R.styleable.FrameEmptyLayout_error_text);
+        errorBtnMessage = arr.getString(R.styleable.FrameEmptyLayout_error_retry_text);
         //Empty state attrs
-        emptyImgId = arr.getResourceId(R.styleable.EmptyLayout_empty_image,-1);
-        emptyMessage = arr.getString(R.styleable.EmptyLayout_empty_text);
+        emptyImgId = arr.getResourceId(R.styleable.FrameEmptyLayout_empty_image,-1);
+        emptyMessage = arr.getString(R.styleable.FrameEmptyLayout_empty_text);
         arr.recycle();
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- EmptyLayout start -->
-    <declare-styleable name="EmptyLayout">
+    <declare-styleable name="FrameEmptyLayout">
         <attr name="error_image" format="reference"/>
         <attr name="error_text" format="string"/>
         <attr name="error_retry_text" format="string"/>
@@ -10,7 +10,16 @@
         <attr name="empty_text" format="string"/>
     </declare-styleable>
     <!-- EmptyLayout end -->
-    
+    <declare-styleable name="LinearEmptyLayout">
+        <attr format="boolean"
+              name="show_loading" />
+        <attr format="string"
+              name="title_text" />
+        <attr format="string"
+              name="detail_text" />
+        <attr format="string"
+              name="btn_text" />
+    </declare-styleable>
     <!--************ QMUILoading ***********-->
     <declare-styleable name="LoadingView">
         <attr name="loading_view_size" format="dimension"/>

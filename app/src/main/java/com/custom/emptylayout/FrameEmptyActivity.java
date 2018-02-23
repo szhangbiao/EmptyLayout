@@ -13,7 +13,6 @@ import java.util.List;
 
 public class FrameEmptyActivity extends AppCompatActivity {
     private FrameEmptyLayout emptyLayout;
-
     private List<Integer> skipId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +54,9 @@ public class FrameEmptyActivity extends AppCompatActivity {
                 break;
             case  R.id.menu_error:
                 emptyLayout.showError(R.drawable.net_error,"不知道什么原因加载出错了！","点击重试");
+                break;
+            case  R.id.menu_net_error:
+                emptyLayout.showError(R.drawable.net_error,"不知道什么原因加载出错了！",null);
                 break;
         }
         return true;

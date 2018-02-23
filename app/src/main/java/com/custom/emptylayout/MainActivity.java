@@ -17,5 +17,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,FrameEmptyActivity.class));
             }
         });
+        findViewById(R.id.tv_linear_empty).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,LinearEmptyActivity.class));
+            }
+        });
     }
 }

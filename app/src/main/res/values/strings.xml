@@ -4,4 +4,18 @@
     <string name="text_normal">正常显示view</string>
     <string name="text_empty">空数据页面</string>
     <string name="text_error">加载出错页面</string>
+    <string name="text_net_error">网络出错页面</string>
+    
+    <string name="emptyView_loading">显示Loading</string>
+    <string name="emptyView_single_text">显示一行提示语</string>
+    <string name="emptyView_double_text">显示两行提示语</string>
+    <string name="emptyView_single_text_and_button">显示一行文字和按钮</string>
+    <string name="emptyView_double_text_and_button">显示两行文字和按钮</string>
+    
+    <string name="emptyView_single">这是一行提示语</string>
+    <string name="emptyView_double">我是一个EmptyView</string>
+    <string name="emptyView_detail_double">通过右上角的菜单来切换我的不同状态</string>
+    <string name="emptyView_fail_title">加载失败</string>
+    <string name="emptyView_fail_desc">请检测网络是否能正常连接</string>
+    <string name="emptyView_retry">点击重试</string>
 </resources>
