@@ -1,6 +1,6 @@
 # EmptyLayout
 基于LinearLayout和FrameLayout的两套切换不同的数据状态布局，包括加载中、空数据和出错重试状态。
-# FrameEmptyLayout
+# 特点
 * 可以像正常的FrameLayout和LinearLayout一样使用，不会增加布局层数
 * 各种状态布局都是动态添加，不会带来额外的性能损耗
 * 在错误重试页面添加了重试按钮，方便添加自定义重试事件
