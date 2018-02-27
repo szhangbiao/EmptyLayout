@@ -35,19 +35,19 @@ public class LinearEmptyActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case  R.id.menu_loading:
-                emptyLayout.show(true);
+                emptyLayout.showStatus(true);
                 break;
             case  R.id.menu_normal:
-                emptyLayout.showContent();
+                emptyLayout.showNormal();
                 break;
             case  R.id.menu_single_text:
-                emptyLayout.show(getResources().getString(R.string.emptyView_single), null);
+                emptyLayout.showStatus(getResources().getString(R.string.emptyView_single), null);
                 break;
             case  R.id.menu_double_text:
-                emptyLayout.show(getResources().getString(R.string.emptyView_double), getResources().getString(R.string.emptyView_detail_double));
+                emptyLayout.showStatus(getResources().getString(R.string.emptyView_double), getResources().getString(R.string.emptyView_detail_double));
                 break;
             case  R.id.menu_single_text_and_button:
-                emptyLayout.show(false, getResources().getString(R.string.emptyView_fail_title), null, getResources().getString(R.string.emptyView_retry), new View.OnClickListener() {
+                emptyLayout.showStatus(false, getResources().getString(R.string.emptyView_fail_title), null, getResources().getString(R.string.emptyView_retry), new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(LinearEmptyActivity.this,getResources().getString(R.string.emptyView_retry),Toast.LENGTH_SHORT).show();
@@ -55,7 +55,7 @@ public class LinearEmptyActivity extends AppCompatActivity {
                 });
                 break;
             case  R.id.menu_double_text_and_button:
-                emptyLayout.show(false, getResources().getString(R.string.emptyView_fail_title), getResources().getString(R.string.emptyView_fail_desc), getResources().getString(R.string.emptyView_retry), new View.OnClickListener() {
+                emptyLayout.showStatus(false, getResources().getString(R.string.emptyView_fail_title), getResources().getString(R.string.emptyView_fail_desc), getResources().getString(R.string.emptyView_retry), new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(LinearEmptyActivity.this,getResources().getString(R.string.emptyView_retry),Toast.LENGTH_SHORT).show();
@@ -63,7 +63,7 @@ public class LinearEmptyActivity extends AppCompatActivity {
                 });
                 break;
             default:
-                emptyLayout.showContent();
+                emptyLayout.showNormal();
                 break;
         }
         return true;

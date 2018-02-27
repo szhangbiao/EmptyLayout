@@ -9,17 +9,7 @@
         <attr name="empty_image" format="reference"/>
         <attr name="empty_text" format="string"/>
     </declare-styleable>
-    <!-- EmptyLayout end -->
-    <declare-styleable name="LinearEmptyLayout">
-        <attr format="boolean"
-              name="show_loading" />
-        <attr format="string"
-              name="title_text" />
-        <attr format="string"
-              name="detail_text" />
-        <attr format="string"
-              name="btn_text" />
-    </declare-styleable>
+    
     <!--************ QMUILoading ***********-->
     <declare-styleable name="LoadingView">
         <attr name="loading_view_size" format="dimension"/>

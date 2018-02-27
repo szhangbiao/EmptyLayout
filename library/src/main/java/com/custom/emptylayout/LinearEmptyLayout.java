@@ -21,6 +21,7 @@ import java.util.List;
  */
 
 public class LinearEmptyLayout extends LinearLayout{
+
     private LoadingView mLoadingView;
     private TextView mTitleTextView;
     private TextView mDetailTextView;
@@ -38,16 +39,8 @@ public class LinearEmptyLayout extends LinearLayout{
 
     public LinearEmptyLayout (Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        init();
-        TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.LinearEmptyLayout);
-        Boolean attrShowLoading = arr.getBoolean(R.styleable.LinearEmptyLayout_show_loading, false);
-        String attrTitleText = arr.getString(R.styleable.LinearEmptyLayout_title_text);
-        String attrDetailText = arr.getString(R.styleable.LinearEmptyLayout_detail_text);
-        String attrBtnText = arr.getString(R.styleable.LinearEmptyLayout_btn_text);
-        arr.recycle();
         setOrientation(VERTICAL);
         setGravity(Gravity.CENTER);
-        show(attrShowLoading, attrTitleText, attrDetailText, attrBtnText, null);
     }
 
     @Override
@@ -66,6 +59,13 @@ public class LinearEmptyLayout extends LinearLayout{
         mButton = findViewById(R.id.empty_view_button);
     }
 
+    @Override
+    protected void onFinishInflate () {
+        super.onFinishInflate();
+        init();
+        showNormal();
+    }
+
     /**
      * 显示emptyView
      *
@@ -75,7 +75,7 @@ public class LinearEmptyLayout extends LinearLayout{
      * @param buttonText 按钮的文字，不需要按钮则传null
      * @param onButtonClickListener 按钮的onClick监听，不需要则传null
      */
-    public void show (boolean loading, String titleText, String detailText, String buttonText, OnClickListener onButtonClickListener) {
+    public void showStatus (boolean loading, String titleText, String detailText, String buttonText, OnClickListener onButtonClickListener) {
         setLoadingShowing(loading);
         setTitleText(titleText);
         setDetailText(detailText);
@@ -89,8 +89,8 @@ public class LinearEmptyLayout extends LinearLayout{
      *
      * @param loading 是否显示loading
      */
-    public void show(boolean loading) {
-        show(loading,null,null,null,null);
+    public void showStatus(boolean loading) {
+        showStatus(loading,null,null,null,null);
     }
 
     /**
@@ -99,14 +99,14 @@ public class LinearEmptyLayout extends LinearLayout{
      * @param titleText 标题的文字，不需要则传null
      * @param detailText 详情文字，不需要则传null
      */
-    public void show (String titleText, String detailText) {
-        show(false,titleText,detailText,null,null);
+    public void showStatus (String titleText, String detailText) {
+        showStatus(false,titleText,detailText,null,null);
     }
 
     /**
      * 显示正常的view
      */
-    public void showContent(){
+    public void showNormal(){
         hide();
         setContentVisibility(true);
     }
@@ -119,6 +119,7 @@ public class LinearEmptyLayout extends LinearLayout{
             v.setVisibility(visible ? View.VISIBLE : View.GONE);
         }
     }
+
     /**
      * 隐藏emptyView
      */

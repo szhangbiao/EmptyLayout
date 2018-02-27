@@ -220,6 +220,12 @@ public class FrameEmptyLayout extends FrameLayout{
                 hideLoadingView();
                 setContentVisibility(false, skipIds);
                 break;
+            default:
+                hideEmptyView();
+                hideErrorView();
+                hideLoadingView();
+                setContentVisibility(true, skipIds);
+                break;
         }
     }
 
