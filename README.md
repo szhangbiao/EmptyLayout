@@ -48,5 +48,7 @@ emptyLayout.showError(R.drawable.net_error,"不知道什么原因加载出错了
 # 后续改进
 * 支持在Theme中设置默认的图片和提示语
 * 支持在style中修改一些样式
+# 支持版本
+支持 API Level 14+。
 # Author
 szhangbiao, szhangbiao@gmail.com
