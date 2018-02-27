@@ -45,5 +45,8 @@ emptyLayout.showError(R.drawable.net_error,"不知道什么原因加载出错了
 emptyLayout.showError(R.drawable.net_error,"不知道什么原因加载出错了！",null);
 ```
 3.LinearEmptyLayout用法类似具体可参考sample中的代码
+# 后续改进
+* 支持在Theme中设置默认的图片和提示语
+* 支持在style中修改一些样式
 # Author
 szhangbiao, szhangbiao@gmail.com
