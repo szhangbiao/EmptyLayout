@@ -3,8 +3,6 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 26
 
-
-
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 26
@@ -20,13 +18,31 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+            options.addStringOption('encoding', 'UTF-8')
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api 'com.android.support:appcompat-v7:26.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    compileOnly 'com.android.support:support-annotations:26.1.0'
+}
+//添加下面这句
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'shizhangbiao'    //注册时候的用户名
+    groupId = 'com.custom.emptylayout'//   //compile引用时的第1部分
+    artifactId = 'emptylayout'////发布到JCenter上的项目名字，compile引用时的第2部分项目名
+    publishVersion = '1.0.0'//版本号 ，compile引用时的最后部分，下次更新是只需要更改版本号即可
+    desc = 'A customizable EmptyLayout on Android'//描述，不重要
+    website = 'https://github.com/szhangbiao/EmptyLayout'  //项目的GitHub网站
 }
