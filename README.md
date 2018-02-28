@@ -6,7 +6,8 @@
 * 在错误重试页面添加了重试按钮，方便添加自定义重试事件
 * 在各种状态页面需要额外显示头部View（LinearEmptyLayout暂不支持）<br>
 # 效果预览
-![](https://github.com/szhangbiao/EmptyLayout/gif/FrameEmptyLayout.gif) 
+![FrameEmptyLayout](https://github.com/szhangbiao/EmptyLayout/blob/master/gif/FrameEmptyLayout.gif) 
+![LinearEmptyLayout](https://github.com/szhangbiao/EmptyLayout/blob/master/gif/LinearEmptyLayout.gif) 
 # 下载
 1.在项目的 `build.gradle` 中添加：
 ```java
