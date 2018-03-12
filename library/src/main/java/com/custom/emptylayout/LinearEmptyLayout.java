@@ -1,7 +1,6 @@
 package com.custom.emptylayout;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -13,7 +12,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -110,6 +108,7 @@ public class LinearEmptyLayout extends LinearLayout{
         hide();
         setContentVisibility(true);
     }
+
     /**
      * 根据 visible 控制View的显示
      * @param visible

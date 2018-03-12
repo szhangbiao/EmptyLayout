@@ -51,7 +51,7 @@ public class FrameEmptyActivity extends AppCompatActivity {
                 emptyLayout.showContent();
                 break;
             case  R.id.menu_empty:
-                emptyLayout.showEmpty(R.drawable.ic_launcher_foreground,"暂无数据！",skipId);
+                emptyLayout.showEmpty(R.mipmap.ic_launcher,"暂无数据！",skipId);
                 break;
             case  R.id.menu_error:
                 emptyLayout.showError(R.drawable.net_error,"不知道什么原因加载出错了！","点击重试");

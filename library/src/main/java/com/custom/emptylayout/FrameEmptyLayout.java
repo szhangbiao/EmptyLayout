@@ -31,14 +31,20 @@ public class FrameEmptyLayout extends FrameLayout{
     private static final int STATUS_EMPTY = 3;
     private static final int STATUS_ERROR = 4;
 
-    //正在加载时显示的view
+    /**
+     * 正在加载时显示的view
+     */
     private LoadingView loadingView;
-    //空数据时显示的View
+    /**
+     * 空数据时显示的View
+     */
     private View emptyView;
     private ImageView emptyImageView;
     private TextView emptyTextView;
 
-    //网络加载错误时显示的View
+    /**
+     * 网络加载错误时显示的View
+     */
     private View errorView;
     private ImageView errorImageView;
     private TextView errorTextView;
@@ -47,8 +53,9 @@ public class FrameEmptyLayout extends FrameLayout{
     private int mLayoutState=STATUS_NORMAL;
     private LayoutInflater inflater;
     private LayoutParams layoutParams;
-    //正常加载时显示的view
-    //private View normalView;
+    /**
+     * 正常加载时显示的view
+     */
     private List<View> contentViews = new ArrayList<>();
 
     private int errorImgId;
