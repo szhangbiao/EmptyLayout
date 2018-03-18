@@ -1,5 +1,5 @@
 # EmptyLayout
-基于LinearLayout和FrameLayout的两套切换不同的数据状态布局，包括加载中、空数据和出错重试状态。<br>
+基于LinearLayout和FrameLayout的两套切换不同的数据状态布局，包括加载中、空数据和出错重试状态。
 [导读](https://www.jianshu.com/p/b5ad2dd81510)
 # 特点
 * 可以像正常的FrameLayout和LinearLayout一样使用，不会增加布局层数
